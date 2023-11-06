@@ -64,7 +64,7 @@ def asciidoc_fake_parse(path: pathlib.Path):
         # Once extraneous text elements are skipped, we work word by word on the parsed HTML
         # We do this because line comments are not present in the HTML output
         for i, line in enumerate(elem_text.split()):
-            original = line.replace("\xa0", "{nbsp}").replace("’", "'")
+            original = line.replace("\xa0", "{nbsp}").replace("’", "'").replace("…\u200b", "...")
             elem_position_in_text = text.find(original, pos)
             assert elem_position_in_text != -1, f"can't find {repr(original)} after {pos}"
             if i == 0:
