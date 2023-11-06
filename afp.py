@@ -54,13 +54,16 @@ def asciidoc_fake_parse(path: pathlib.Path):
         # skip Figure x. text in captions
         if elem_text.startswith("Figure") and elem.parent.parent.attrs["class"] == ['imageblock', 'text-center'] and elem.parent.attrs["class"] == ["title"]:
             elem_text = re.sub(r"^Figure \d+\. ", "", elem_text)
+        # menu:[] separator
+        if elem_text == "›":
+            continue
 
-        # Once extraneous text elements are skipped, we work line by line on the parsed HTML
+        # Once extraneous text elements are skipped, we work word by word on the parsed HTML
         # We do this because line comments are not present in the HTML output
-        for i, line in enumerate(elem_text.split("\n")):
+        for i, line in enumerate(elem_text.split()):
             original = line.replace("\xa0", "{nbsp}").replace("’", "'")
             elem_position_in_text = text.find(original, pos)
-            assert elem_position_in_text != -1, f"can't find {repr(original)}"
+            assert elem_position_in_text != -1, f"can't find {repr(original)} after {pos}"
             if i == 0:
                 blocks.append({"text": text[pos:elem_position_in_text], "path": None, "start": pos})
             blocks.append({"text": original, "path": elem_to_path(elem), "start": elem_position_in_text})
