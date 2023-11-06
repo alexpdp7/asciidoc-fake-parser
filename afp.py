@@ -49,7 +49,7 @@ def asciidoc_fake_parse(path: pathlib.Path):
         if elem_text == "Note" and elem.parent.parent.parent.parent.parent.attrs["class"] == ['admonitionblock', 'note']:
             continue
         # skip callouts
-        if re.match(r"\(\d+\)", elem_text) and elem.parent.attrs["class"] == ["conum"]:
+        if re.match(r"\(\d+\)", elem_text) and elem.parent.attrs.get("class") == ["conum"]:
             continue
         # skip Figure x. text in captions
         if elem_text.startswith("Figure") and elem.parent.parent.attrs["class"] == ['imageblock', 'text-center'] and elem.parent.attrs["class"] == ["title"]:
