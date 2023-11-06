@@ -54,7 +54,7 @@ def asciidoc_fake_parse(path: pathlib.Path):
         if re.match(r"\(\d+\)", elem_text) and elem.parent.attrs.get("class") == ["conum"]:
             continue
         # skip Figure x. text in captions
-        if elem_text.startswith("Figure") and elem.parent.parent.attrs["class"] == ['imageblock', 'text-center'] and elem.parent.attrs["class"] == ["title"]:
+        if elem_text.startswith("Figure") and elem.parent.parent.attrs["class"][0:2] == ['imageblock', 'text-center'] and elem.parent.attrs["class"] == ["title"]:
             elem_text = re.sub(r"^Figure \d+\. ", "", elem_text)
         # skip Table x. text in captions
         if elem_text.startswith("Table") and elem.parent.name == "caption":
