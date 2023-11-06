@@ -59,7 +59,7 @@ def asciidoc_fake_parse(path: pathlib.Path):
         for i, line in enumerate(elem_text.split("\n")):
             original = line.replace("\xa0", "{nbsp}").replace("’", "'")
             elem_position_in_text = text.find(original, pos)
-            assert elem_position_in_text != -1, f"can't find {repr(elem_text)}"
+            assert elem_position_in_text != -1, f"can't find {repr(original)}"
             if i == 0:
                 blocks.append({"text": text[pos:elem_position_in_text], "path": None, "start": pos})
             blocks.append({"text": original, "path": elem_to_path(elem), "start": elem_position_in_text})
