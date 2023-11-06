@@ -33,6 +33,31 @@ def elem_to_path(elem):
     return "/".join([p.name for p in elem.parents])
 
 
+def consolidate(blocks, text):
+    """
+    Joins blocks with the same path with only whitespace in between
+    """
+    result = []
+
+    i = 0
+    while i < len(blocks):
+        consolidated_block = blocks[i]
+        j = i + 1
+        while j < len(blocks):
+            candidate_block = blocks[j]
+            if not consolidated_block["path"] == candidate_block["path"]:
+                break
+            pos_of_end_of_consolidated_block_text = consolidated_block["start"] + len(consolidated_block["text"])
+            gap = text[pos_of_end_of_consolidated_block_text:candidate_block["start"]]
+            if gap.strip() != "":
+                break
+            consolidated_block["text"] += gap + candidate_block["text"]
+            j = j + 1
+        result.append(consolidated_block)
+        i = j
+    return result
+
+
 def asciidoc_fake_parse(path: pathlib.Path):
     text = path.read_text()
     soup = adoc_to_soup(path)
@@ -82,6 +107,8 @@ def asciidoc_fake_parse(path: pathlib.Path):
                 blocks.append({"text": text[pos:elem_position_in_text], "path": None, "start": pos})
             blocks.append({"text": original, "path": elem_to_path(elem), "start": elem_position_in_text})
             pos = elem_position_in_text + len(original)
+
+    blocks = consolidate(blocks, text)
     return blocks
 
 
