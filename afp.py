@@ -57,6 +57,9 @@ def asciidoc_fake_parse(path: pathlib.Path):
         # menu:[] separator
         if elem_text == "›":
             continue
+        # hack: skip code blocks to prevent annoying issues with escapes inside
+        if elem.find_parent("pre"):
+            continue
 
         # Once extraneous text elements are skipped, we work word by word on the parsed HTML
         # We do this because line comments are not present in the HTML output
