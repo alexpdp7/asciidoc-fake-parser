@@ -1,0 +1,68 @@
+Introducing:
+
+== `asciidoc-fake-parser`
+
+This is a crude Python hack that replicates the trick that https://vale.sh/[Vale] uses to understand AsciiDoc.
+
+`asciidoctor` is used to convert AsciiDoc to HTML.
+Then, this tool correlates text on the original AsciiDoc file with the text on the tags in the HTML output.
+This generates a JSON structure similar to an annotated AST.
+
+[subs=+quotes]
+----
+$ asciidoc-fake-parser README.adoc | python3 -m json.tool
+[
+    {
+        "text": "",
+        "path": null,
+        "start": 0
+    },
+    {
+        "text": "Introducing:",
+        "path": "p/div/[document]",
+        "start": 0
+    },
+    {
+        "text": "\n\n== `",
+        "path": null,
+        "start": 12
+    },
+    {
+        "text": "asciidoc-fake-parser",
+        "path": "code/h2/div/[document]",
+        "start": 18
+    },
+    {
+        "text": "`\n\n",
+        "path": null,
+        "start": 38
+    },
+    {
+        "text": "This is a crude Python hack that replicates the trick that ",
+        "path": "p/div/div/div/[document]",
+        "start": 41
+    },
+    {
+        "text": "https://vale.sh/[",
+        "path": null,
+        "start": 100
+    },
+    {
+        "text": "Vale",
+        "path": "a/p/div/div/div/[document]",
+        "start": 117
+    },
+    {
+        "text": "]",
+        "path": null,
+        "start": 121
+    },
+    {
+        "text": " uses to understand AsciiDoc.",
+        "path": "p/div/div/div/[document]",
+        "start": 122
+    },
+_... output omitted..._
+----
+
+See link:README.json for a parsed version of this file.

@@ -1,0 +1,392 @@
+[
+    {
+        "text": "",
+        "path": null,
+        "start": 0
+    },
+    {
+        "text": "Introducing:",
+        "path": "p/div/[document]",
+        "start": 0
+    },
+    {
+        "text": "\n\n== `",
+        "path": null,
+        "start": 12
+    },
+    {
+        "text": "asciidoc-fake-parser",
+        "path": "code/h2/div/[document]",
+        "start": 18
+    },
+    {
+        "text": "`\n\n",
+        "path": null,
+        "start": 38
+    },
+    {
+        "text": "This is a crude Python hack that replicates the trick that ",
+        "path": "p/div/div/div/[document]",
+        "start": 41
+    },
+    {
+        "text": "https://vale.sh/[",
+        "path": null,
+        "start": 100
+    },
+    {
+        "text": "Vale",
+        "path": "a/p/div/div/div/[document]",
+        "start": 117
+    },
+    {
+        "text": "]",
+        "path": null,
+        "start": 121
+    },
+    {
+        "text": " uses to understand AsciiDoc.",
+        "path": "p/div/div/div/[document]",
+        "start": 122
+    },
+    {
+        "text": "\n\n`",
+        "path": null,
+        "start": 151
+    },
+    {
+        "text": "asciidoctor",
+        "path": "code/p/div/div/div/[document]",
+        "start": 154
+    },
+    {
+        "text": "`",
+        "path": null,
+        "start": 165
+    },
+    {
+        "text": " is used to convert AsciiDoc to HTML.",
+        "path": "p/div/div/div/[document]",
+        "start": 166
+    },
+    {
+        "text": "Then, this tool correlates text on the original AsciiDoc file with the text on the tags in the HTML output.",
+        "path": "p/div/div/div/[document]",
+        "start": 204
+    },
+    {
+        "text": "This generates a JSON structure similar to an annotated AST.",
+        "path": "p/div/div/div/[document]",
+        "start": 312
+    },
+    {
+        "text": "\n\n[subs=+quotes]\n----\n",
+        "path": null,
+        "start": 372
+    },
+    {
+        "text": "$ asciidoc-fake-parser README.adoc | python3 -m json.tool",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 394
+    },
+    {
+        "text": "[",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 452
+    },
+    {
+        "text": "    {",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 454
+    },
+    {
+        "text": "        \"text\": \"\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 460
+    },
+    {
+        "text": "        \"path\": null,",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 480
+    },
+    {
+        "text": "        \"start\": 0",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 502
+    },
+    {
+        "text": "    },",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 521
+    },
+    {
+        "text": "    {",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 528
+    },
+    {
+        "text": "        \"text\": \"Introducing:\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 534
+    },
+    {
+        "text": "        \"path\": \"p/div/[document]\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 566
+    },
+    {
+        "text": "        \"start\": 0",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 602
+    },
+    {
+        "text": "    },",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 621
+    },
+    {
+        "text": "    {",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 628
+    },
+    {
+        "text": "        \"text\": \"\\n\\n== ",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 634
+    },
+    {
+        "text": "`",
+        "path": null,
+        "start": 658
+    },
+    {
+        "text": "\",",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 659
+    },
+    {
+        "text": "        \"path\": null,",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 662
+    },
+    {
+        "text": "        \"start\": 12",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 684
+    },
+    {
+        "text": "    },",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 704
+    },
+    {
+        "text": "    {",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 711
+    },
+    {
+        "text": "        \"text\": \"asciidoc-fake-parser\",",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 717
+    },
+    {
+        "text": "        \"path\": \"code/h2/div/[document]\",",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 757
+    },
+    {
+        "text": "        \"start\": 18",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 799
+    },
+    {
+        "text": "    },",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 819
+    },
+    {
+        "text": "    {",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 826
+    },
+    {
+        "text": "        \"text\": \"",
+        "path": "code/pre/div/div/div/div/[document]",
+        "start": 832
+    },
+    {
+        "text": "`",
+        "path": null,
+        "start": 849
+    },
+    {
+        "text": "\\n\\n\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 850
+    },
+    {
+        "text": "        \"path\": null,",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 857
+    },
+    {
+        "text": "        \"start\": 38",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 879
+    },
+    {
+        "text": "    },",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 899
+    },
+    {
+        "text": "    {",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 906
+    },
+    {
+        "text": "        \"text\": \"This is a crude Python hack that replicates the trick that \",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 912
+    },
+    {
+        "text": "        \"path\": \"p/div/div/div/[document]\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 991
+    },
+    {
+        "text": "        \"start\": 41",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1035
+    },
+    {
+        "text": "    },",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1055
+    },
+    {
+        "text": "    {",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1062
+    },
+    {
+        "text": "        \"text\": \"https://vale.sh/[\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1068
+    },
+    {
+        "text": "        \"path\": null,",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1105
+    },
+    {
+        "text": "        \"start\": 100",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1127
+    },
+    {
+        "text": "    },",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1148
+    },
+    {
+        "text": "    {",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1155
+    },
+    {
+        "text": "        \"text\": \"Vale\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1161
+    },
+    {
+        "text": "        \"path\": \"a/p/div/div/div/[document]\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1185
+    },
+    {
+        "text": "        \"start\": 117",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1231
+    },
+    {
+        "text": "    },",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1252
+    },
+    {
+        "text": "    {",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1259
+    },
+    {
+        "text": "        \"text\": \"]\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1265
+    },
+    {
+        "text": "        \"path\": null,",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1286
+    },
+    {
+        "text": "        \"start\": 121",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1308
+    },
+    {
+        "text": "    },",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1329
+    },
+    {
+        "text": "    {",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1336
+    },
+    {
+        "text": "        \"text\": \" uses to understand AsciiDoc.\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1342
+    },
+    {
+        "text": "        \"path\": \"p/div/div/div/[document]\",",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1391
+    },
+    {
+        "text": "        \"start\": 122",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1435
+    },
+    {
+        "text": "    },",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1456
+    },
+    {
+        "text": "",
+        "path": "pre/div/div/div/div/[document]",
+        "start": 1462
+    },
+    {
+        "text": "\n_",
+        "path": null,
+        "start": 1462
+    },
+    {
+        "text": "... output omitted...",
+        "path": "em/pre/div/div/div/div/[document]",
+        "start": 1464
+    },
+    {
+        "text": "_\n----\n\n",
+        "path": null,
+        "start": 1485
+    },
+    {
+        "text": "See link:README.json for a parsed version of this file.",
+        "path": "p/div/div/div/[document]",
+        "start": 1493
+    }
+]
