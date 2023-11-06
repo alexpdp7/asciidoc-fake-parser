@@ -48,7 +48,7 @@ def asciidoc_fake_parse(path: pathlib.Path):
         # skip admonitions
         def is_admonition_text(kind):
             return elem_text == kind and elem.parent.parent.parent.parent.parent.attrs["class"][0:2] == ['admonitionblock', kind.lower()]
-        if is_admonition_text("Note") or is_admonition_text("Important"):
+        if is_admonition_text("Note") or is_admonition_text("Important") or is_admonition_text("Warning"):
             continue
         # skip callouts
         if re.match(r"\(\d+\)", elem_text) and elem.parent.attrs.get("class") == ["conum"]:
