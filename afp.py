@@ -68,6 +68,9 @@ def asciidoc_fake_parse(path: pathlib.Path):
         # ignore xrefs
         if re.match(r"\[[^ ]+\]", elem_text) and elem.parent.name == "a":
             continue
+        # ignore processing errors
+        if elem_text.startswith("Unresolved directive in "):
+            continue
 
         # Once extraneous text elements are skipped, we work word by word on the parsed HTML
         # We do this because line comments are not present in the HTML output
