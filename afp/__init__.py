@@ -17,8 +17,12 @@ structural processing of AsciiDoc.
 """
 
 
-def adoc_to_soup(path):
-    return bs4.BeautifulSoup(subprocess.run(["asciidoctor", "-b", "html5", "-a", "experimental", "-e", path, "-o", "-"], check=True, stdout=subprocess.PIPE).stdout, features="html.parser")
+def adoc_to_soup(path, silence_asciidoctor=False):
+    return bs4.BeautifulSoup(subprocess.run(["asciidoctor", "-b", "html5", "-a", "experimental", "-e", path, "-o", "-"],
+                                            check=True,
+                                            stdout=subprocess.PIPE,
+                                            stderr=subprocess.DEVNULL if silence_asciidoctor else None,
+                                            ).stdout, features="html.parser")
 
 
 def walk(soup):
@@ -58,9 +62,9 @@ def consolidate(blocks, text):
     return result
 
 
-def asciidoc_fake_parse(path: pathlib.Path):
+def asciidoc_fake_parse(path: pathlib.Path, silence_asciidoctor=False):
     text = path.read_text()
-    soup = adoc_to_soup(path)
+    soup = adoc_to_soup(path, silence_asciidoctor)
     pos = 0
     blocks = []
     for elem in walk(soup):

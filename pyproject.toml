@@ -18,3 +18,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 asciidoc-fake-parser = 'afp:main'
+afp-grep = 'afp.utils.grep:main'
