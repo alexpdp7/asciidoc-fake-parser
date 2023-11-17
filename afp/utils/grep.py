@@ -28,7 +28,7 @@ def main():
                 if pattern.search(elem["text"]):
                     matched.append(pattern)
             if matched:
-                print(elem["path"], elem["start"], matched, repr(elem["text"]))
+                print("\t".join(map(str, [elem["path"], str(file), elem["start"], matched, repr(elem["text"])])))
 
     if unparsed:
-        print("Not parsed", unparsed, file=sys.stderr, flush=True)
+        print("Error parsing:", ", ".join(list(map(str, unparsed))), file=sys.stderr, flush=True)
