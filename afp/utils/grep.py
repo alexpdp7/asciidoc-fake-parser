@@ -25,10 +25,8 @@ def main():
         for elem in parsed:
             matched = []
             for pattern in patterns:
-                if pattern.search(elem["text"]):
-                    matched.append(pattern)
-            if matched:
-                print("\t".join(map(str, [elem["path"], str(file), elem["start"], matched, repr(elem["text"])])))
+                for match in pattern.findall(elem["text"]):
+                    print("\t".join(map(str, [elem["path"], str(file), elem["start"], match, repr(elem["text"])])))
 
     if unparsed:
         print("Error parsing:", ", ".join(list(map(str, unparsed))), file=sys.stderr, flush=True)
