@@ -106,6 +106,11 @@ def asciidoc_fake_parse(path: pathlib.Path, silence_asciidoctor=False):
         for i, line in enumerate(elem_text.split()):
             original = line.replace("\xa0", "{nbsp}").replace("’", "'").replace("…\u200b", "...")
             elem_position_in_text = text.find(original, pos)
+            if elem_position_in_text == -1:
+                # that didn't work. now try ignoring backslashes...
+                elem_position_in_text = (text[pos:].replace("\\", "")).find(original)
+                if elem_position_in_text != -1:
+                    elem_position_in_text += pos
             assert elem_position_in_text != -1, f"can't find {repr(original)} after {pos}"
             if i == 0:
                 blocks.append({"text": text[pos:elem_position_in_text], "path": None, "start": pos})
